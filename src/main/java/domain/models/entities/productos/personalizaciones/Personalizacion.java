@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name="personalizacion")
 public class Personalizacion extends Persistente {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_posible_personalizacion")
     private PosiblePersonalizacion PosiblePersonalizacion;
     @Column(name="contenido")

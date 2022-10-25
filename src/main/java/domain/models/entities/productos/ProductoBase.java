@@ -21,8 +21,10 @@ public class ProductoBase extends Persistente {
     private Integer precioBase;
     @Column(name="tiempo_de_fabricacion")
     private Integer tiempoDeFabricacion;
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(cascade = CascadeType.MERGE)
+    @JoinColumn(name="fk_posible_personalizacion")
     private List<PosiblePersonalizacion> posiblesPersonalizaciones;
+
 
     public ProductoBase(){
         this.posiblesPersonalizaciones=new ArrayList<>();

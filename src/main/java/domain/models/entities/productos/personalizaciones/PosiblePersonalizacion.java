@@ -12,16 +12,18 @@ import javax.persistence.*;
 @Table(name="posible_personalizacion")
 public class PosiblePersonalizacion extends Persistente {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="id_area")
     private AreaDePersonalizacion area;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="id_tipo")
     private TipoDePersonalizacion tipo;
 
+    /*
     @ManyToOne
     @JoinColumn(name="fk_producto_base")
     private ProductoBase producto;
+     */
 
     @Override
     public String toString() {

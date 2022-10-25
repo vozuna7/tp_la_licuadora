@@ -12,5 +12,5 @@ import javax.persistence.MappedSuperclass;
 public abstract class Persistente {
     @Id
     @GeneratedValue
-    private float id;
+    private Long id;
 }
