@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "producto_personalizado")
 public class ProductoPersonalizado extends Persistente {
     @Getter @Setter
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private ProductoBase productoBase;
     @Getter
     @ManyToMany(cascade = CascadeType.MERGE)
